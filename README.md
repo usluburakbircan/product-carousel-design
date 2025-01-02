@@ -1,7 +1,7 @@
 # insider-product-carousel-design
 
 <b>Introduction</b><br>
-In addition to meeting the requested status requirements, I used the additional time available to implement an improved version of the product detail page. I designed this version to make the carousel look more meaningful within the context of the page and because the time was more than enough. I look forward to your feedback in advance.
+In addition to meeting the requested status requirements, I used the additional time available to implement an improved version of the product detail page (BIRCAN_BURAK_USLU_2.JS file). I designed this version to make the carousel look more meaningful within the context of the page and because the time was more than enough. I look forward to your feedback in advance.
 
 <b>Implemented Features and Explanations</b><br>
 Meta Tag Addition:<br>
