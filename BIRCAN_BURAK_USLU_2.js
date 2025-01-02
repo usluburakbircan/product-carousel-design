@@ -767,28 +767,49 @@ const init = () => {
     $('<style>').html(css).appendTo('head')
   }
 
-  const setEvents = () => {
-    $(document).on('click', '.like-indicator', function () {
-      const card = $(this).closest('.product-card')
-      const productId = card.data('id')
-      let favorites = JSON.parse(localStorage.getItem('favorites')) || []
-      const heart = $(this).find('.like-indicator__heart')
+const setEvents = () => {
+      $(document).on('click', '.like-indicator', function() {
+          const card = $(this).closest('.product-card');
+          const productId = card.data('id');
+          let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+          const heart = $(this).find('.like-indicator__heart');
 
-      if (heart.hasClass('like-indicator__heart--not-liked')) {
-        heart
-          .removeClass('like-indicator__heart--not-liked')
-          .addClass('like-indicator__heart--liked')
-        favorites.push(productId)
-      } else {
-        heart
-          .removeClass('like-indicator__heart--liked')
-          .addClass('like-indicator__heart--not-liked')
-        favorites = favorites.filter((id) => id !== productId)
-      }
+          if (heart.hasClass('like-indicator__heart--not-liked')) {
+              heart.removeClass('like-indicator__heart--not-liked').addClass('like-indicator__heart--liked');
+              favorites.push(productId);
+          } else {
+              heart.removeClass('like-indicator__heart--liked').addClass('like-indicator__heart--not-liked');
+              favorites = favorites.filter(id => id !== productId);
+          }
 
-      localStorage.setItem('favorites', JSON.stringify(favorites))
-    })
-  }
+          localStorage.setItem('favorites', JSON.stringify(favorites));
+      });
+
+      $(document).on('click', '.left-arrow', function() {
+          const track = $('.carousel-track');
+          const productCard = $('.product-card').first();
+          const cardWidth = productCard.outerWidth(true);
+          const currentScroll = track.scrollLeft();
+          const newScroll = currentScroll - cardWidth;
+
+          track.stop(true, true).animate({
+              scrollLeft: newScroll
+          }, 400, 'swing');
+      });
+
+      $(document).on('click', '.right-arrow', function() {
+          const track = $('.carousel-track');
+          const productCard = $('.product-card').first();
+          const cardWidth = productCard.outerWidth(true);
+          const currentScroll = track.scrollLeft();
+          const newScroll = currentScroll + cardWidth;
+
+          track.stop(true, true).animate({
+              scrollLeft: newScroll
+          }, 400, 'swing');
+      });
+
+  };
 
   const fetchProducts = () => {
     const localProducts = localStorage.getItem('products')
