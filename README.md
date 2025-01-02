@@ -18,7 +18,7 @@ Products were fetched from an API and cached locally in localStorage to optimize
 <br><br>
 Favorite Functionality:<br>
 Interactive favorite icons (like-indicator) were implemented, allowing users to add or remove products from their favorites list.<br>
-Favorite selections are stored in localStorage, ensuring the data persists across page reloads.<br>
+Favorite selections are stored in localStorage, ensuring the data persists across page reloads.
 <br><br>
 Dynamic CSS Styling:<br>
 CSS for the entire application was created and dynamically injected into the DOM.
@@ -27,7 +27,7 @@ Event Handling:<br>
 Multiple event handlers were implemented, including:<br>
 Clicking the favorite icon to toggle favorites.<br>
 Navigating through the carousel using arrow buttons.<br>
-<br><br>
+<br>
 jQuery Loading and Validation:<br>
 The script checks if jQuery is already loaded in the environment. If not, it dynamically loads the library. Ensures the project runs smoothly without requiring manual dependency management.
 <br><br>
